@@ -115,7 +115,7 @@ void Dynamics(bool EvolutionTrackSwitch,FILE* DestinyInformatioFile,double* M,co
         fclose(EvolutionTrackFile);
     }
 
-    DestroyDynamicSystem();
+    DestroyDynamicSystem(DS);
     return;
 }
 

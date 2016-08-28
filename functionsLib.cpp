@@ -227,8 +227,14 @@ void DynamicSystemInitial(DynamicSystem& DS,double* M,const int IniParticleNumbe
     SetNatureParticleLabel(DS.ParticleLabel,IniParticleNumber);
 }
 
-void DestroyDynamicSystem()
+void DestroyDynamicSystem(DynamicSystem& DS)
 {
+    delete DS.Mass;
+    delete DS.ParticleLabel.seq;
+    delete DS.ParticleLabel.re_seq;
+    delete DS.position;
+    delete DS.velocity;
+    delete DS.acceleration;
     return;
 }
 void DestinyFinish(FILE* DestinyInformatioFile,const double& CurrentTime,DynamicSystem&DS,const int IniParticleNumber)
