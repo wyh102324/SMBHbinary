@@ -5,7 +5,7 @@
 #include<stdlib.h>
 
 #include"astroSimulation.h"
-#include"self-adapted.cpp"
+#include"selfAdaptiveMethod.cpp"
 
 #define m1 (1*m_sun)
 #define m2 (0.25*m_sun)

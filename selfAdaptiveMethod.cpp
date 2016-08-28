@@ -1,6 +1,6 @@
 /*
-                Self-Adapted Three-Body Code
-                  Y.H.Wang   Sept.7th.2015
+                Self-Adaptive Code
+                 Created by Y.H.Wang  Sept.7th.2015
 
 
 */
@@ -8,6 +8,7 @@
 #include"interaction.cpp"
 #include"functionsLib.cpp"
 #include"DynamicSystem.cpp"
+#include"Integrator.cpp"
 
 //-------------------code parameters---------------
 #define StepLengthMinLimit 1e-6

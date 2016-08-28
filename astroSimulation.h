@@ -13,8 +13,10 @@
 #define M1_TDE 2
 #define INITIAL_INVALID -2
 #define END_EVOLUTION 1
+#define KEEP_EVOLUTION 0
 #define EVOLUTION_TRACK_ON 1
 #define EVOLUTION_TRACK_OFF 0
+
 const double G2 = G*G, G3 = G*G*G, G4 = G*G*G*G;
 const double cRecip = 1.0/c;
 const double c2Recip = cRecip*cRecip;

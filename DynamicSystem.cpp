@@ -130,6 +130,7 @@ int JudgeDestiny(FILE* DestinyInformatioFile, const double &CurrentTime, Dynamic
             }
         }
     }
+    return KEEP_EVOLUTION;
 }
 
 void DestinyFinish(FILE* DestinyInformatioFile, const double &CurrentTime, DynamicSystem &DS, const int IniParticleNumber)
