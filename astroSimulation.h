@@ -15,7 +15,7 @@
 #define END_EVOLUTION 1
 #define EVOLUTION_TRACK_ON 1
 #define EVOLUTION_TRACK_OFF 0
-const double G2=G*G, G3=G*G*G, G4=G*G*G*G;
+const double G2 = G*G, G3 = G*G*G, G4 = G*G*G*G;
 const double cRecip = 1.0/c;
 const double c2Recip = cRecip*cRecip;
 const double c3Recip = c2Recip*cRecip;
@@ -23,7 +23,7 @@ const double c4Recip = c2Recip*c2Recip;
 const double c5Recip = c2Recip*c3Recip;
 const double c6Recip = c3Recip*c3Recip;
 const double c7Recip = c3Recip*c4Recip;
-const double PI=acos(-1.0);
+const double PI = acos(-1.0);
 
 struct VEC
 {
