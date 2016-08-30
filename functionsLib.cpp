@@ -72,7 +72,7 @@ void GetCentroid(const VEC &position1, const  VEC &position2, const double* M, V
     centroidv.z = (position1.z*M[0] + position2.z*M[1])/(M[0] + M[1]);
 }
 
-const double ERR = 1e-7;
+const double ERR = 1e-9;
 bool errCheck_Orbits(const DynamicSystem &DS_try, const DynamicSystem &DS_htry, const int OrbitNumber)
 {
     bool e = 0, te;
