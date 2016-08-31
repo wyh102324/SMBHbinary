@@ -2,8 +2,8 @@
 #define ASTROSIMULATION_H_INCLUDED
 
 #define G (6.67259e-11)
-#define c 299792458
-#define m_sun 1.989e30
+#define c (299792458)
+#define m_sun (1.989e30)
 #define R_sun (0.005*AU)
 #define AU (149597870700.0)
 #define PC (206256.0*AU)
