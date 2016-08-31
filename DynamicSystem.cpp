@@ -28,7 +28,7 @@ void DestroyDynamicSystem(DynamicSystem &DS)
     return;
 }
 
-void ResetParticle(DynamicSystem &DS, const int TDE_Particle)
+void ResetParticle(DynamicSystem &DS, const int TDE_Particle)//resent the label of particles after TDE merger.
 {
     VEC swap_p, swap_v, swap_a;
     double swap_m;
@@ -82,7 +82,7 @@ int JudgeDestiny(FILE* DestinyInformatioFile, const double &CurrentTime, Dynamic
             return END_EVOLUTION;
         }
     }
-    if(DS.ParticleLabel.seq[0] < DS.ParticleNumber)
+    if(DS.ParticleLabel.seq[0] < DS.ParticleNumber)//this means m0 has not been TDE or merger(TDE, merger particles will be moved to the end of the label sequence)
     {
         DistanceMeasure = GetDistance(DS.position[DS.ParticleLabel.seq[0]], DS.position[DS.ParticleLabel.seq[2]]);
         if(DistanceMeasure < TEDR1)
@@ -106,7 +106,7 @@ int JudgeDestiny(FILE* DestinyInformatioFile, const double &CurrentTime, Dynamic
             }
         }
     }
-    if(DS.ParticleLabel.seq[1] < DS.ParticleNumber)
+    if(DS.ParticleLabel.seq[1] < DS.ParticleNumber)//this means m1 has not been TDE or merger(TDE, merger particles will be moved to the end of the label sequence)
     {
         DistanceMeasure = GetDistance(DS.position[DS.ParticleLabel.seq[1]], DS.position[DS.ParticleLabel.seq[2]]);
         if(DistanceMeasure < TEDR2)
