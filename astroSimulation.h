@@ -42,10 +42,10 @@ struct DynamicSystem
 {
     IndexLabel ParticleLabel;
     int ParticleNumber;
-    VEC*position;
-    VEC*velocity;
-    VEC*acceleration;
-    double*Mass;
+    VEC* position;
+    VEC* velocity;
+    VEC* acceleration;
+    double* Mass;
 
 };
 
