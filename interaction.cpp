@@ -26,7 +26,7 @@ inline double GetPNForce(const VEC &p1, const VEC &p2, const double &mass1, cons
     n.x = dx/r , n.y = dy/r ,n.z= dz/r;
     
     n_component = *((double*)&n + index-1);
-    return (-G*mass2*/r2-c2Recip*6*G*G*mass2*(mass1+mass2)/r3) *n_component;
+    return (-G*mass2/r2-c2Recip*6*G*G*mass2*(mass1+mass2)/r3) * n_component;
     
 }
 
