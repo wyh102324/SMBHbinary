@@ -21,9 +21,12 @@ void Integrator_Leapfrog(DynamicSystem &DS, const double StepLength, const Dynam
         {
             if(i!=j)
             {
-                DS.acceleration[i].x += GetForce(DS.position[i], DS.position[j], DS_src.Mass[j], 1);
+                /*DS.acceleration[i].x += GetForce(DS.position[i], DS.position[j], DS_src.Mass[j], 1);
                 DS.acceleration[i].y += GetForce(DS.position[i], DS.position[j], DS_src.Mass[j], 2);
-                DS.acceleration[i].z += GetForce(DS.position[i], DS.position[j], DS_src.Mass[j], 3);
+                DS.acceleration[i].z += GetForce(DS.position[i], DS.position[j], DS_src.Mass[j], 3);*/
+                DS.acceleration[i].x += GetPNForce(DS.position[i], DS.position[j], DS_src.Mass[i], DS_src.Mass[j], 1);
+                DS.acceleration[i].y += GetPNForce(DS.position[i], DS.position[j], DS_src.Mass[i], DS_src.Mass[j], 2);
+                DS.acceleration[i].z += GetPNForce(DS.position[i], DS.position[j], DS_src.Mass[i], DS_src.Mass[j], 3);
             }
         }
     }
