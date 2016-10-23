@@ -15,7 +15,7 @@ inline double GetForce(const VEC &p1, const VEC &p2, const double &mass,const in
 
 }
 
-inline double GetPNForce(const VEC &p1, const VEC &p2, const double &mass1，const double &mass2,const int index)
+inline double GetPNForce(const VEC &p1, const VEC &p2, const double &mass1, const double &mass2,const int index)
 {
     static double r, r2, r3;
     static double dx, dy, dz, n_component;
