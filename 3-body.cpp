@@ -55,7 +55,8 @@ void RunSamples(int SampleNumber, double* Mass, double* Major_Semi_Axis, double*
         EndTime = 2*PI*sqrt(pow(Major_Semi_Axis[1], 3)/G/(Mass[0] + Mass[1] + Mass[2]));
 
         fprintf(DestinyInformatioFile, "%lf %lf %lf %lf ", Major_Semi_Axis[1]/AU, Eccentricity[1], Tilt[0]*180/PI, Tilt[2]*180/PI);
-        printf("%lf %lf %lf %lf \r\n", Major_Semi_Axis[1]/AU, Eccentricity[1], Tilt[0]*180/PI, Tilt[2]*180/PI);
+        //printf("%lf %lf %lf %lf \r\n", Major_Semi_Axis[1]/AU, Eccentricity[1], Tilt[0]*180/PI, Tilt[2]*180/PI);
+        printf("%d\n",i);
         Dynamics(EVOLUTION_TRACK_OFF, DestinyInformatioFile, Mass, Major_Semi_Axis, Eccentricity, Tilt, EndTime, 4);
     }
 }
@@ -68,7 +69,7 @@ int main()
     double Tilt[3] = {0, i2, 0};
 
     CreateInformationFile(Mass, Major_Semi_Axis, Eccentricity);
-    RunSamples(500, Mass, Major_Semi_Axis, Eccentricity, Tilt);
+    RunSamples(50000, Mass, Major_Semi_Axis, Eccentricity, Tilt);
 
     return 0;
 }
