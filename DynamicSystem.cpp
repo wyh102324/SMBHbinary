@@ -71,7 +71,8 @@ int JudgeDestiny(FILE* DestinyInformatioFile, const double &CurrentTime, Dynamic
     static double TEDR2 = GetTEDRadius(3, DS.Mass[2], DS.Mass[1]);
     static double MergeLimit = GetMergeLimit(DS.Mass[0], DS.Mass[1]);
     static int destiny = 0;
-    
+    if(CurrentTime==0)
+        destiny = UNEVENTFUL;
     if(destiny == UNEVENTFUL)
     {
         DistanceMeasure = GetDistance(DS.position[0], DS.position[1]);
@@ -160,7 +161,7 @@ void initParameter_4Orbits(DynamicSystem &DS, const double* Major_Semi_Axis, con
     DS.position[0].z = -(DS.Mass[2]/(DS.Mass[0] + DS.Mass[1] + DS.Mass[2]))*R*sin(Tilt[1]) + r*DS.Mass[1]/(DS.Mass[0] + DS.Mass[1])*sin(Tilt[0]);
     DS.position[1].x = 0 ;
     DS.position[1].y = (DS.Mass[2]/(DS.Mass[0] + DS.Mass[1] + DS.Mass[2]))*R*cos(Tilt[1]) - r*DS.Mass[0]/(DS.Mass[0] + DS.Mass[1])*cos(Tilt[0]);
-    DS.position[1].z = -(DS.Mass[2]/(DS.Mass[0] + DS.Mass[1] + DS.Mass[2]))*R*sin(Tilt[1]) - DS.Mass[0]/(DS.Mass[0] + DS.Mass[1])*r*sin(Tilt[0]);
+    DS.position[1].z = -(DS.Mass[2]/(DS.Mass[0] + DS.Mass[1] + DS.Mass[2]))*R*sin(Tilt[1]) - r*DS.Mass[0]/(DS.Mass[0] + DS.Mass[1])*sin(Tilt[0]);
     DS.position[2].x = 0 ;
     DS.position[2].y = -((DS.Mass[0] + DS.Mass[1])/(DS.Mass[0] + DS.Mass[1] + DS.Mass[2]))*R*cos(Tilt[1]) ;
     DS.position[2].z = ((DS.Mass[0] + DS.Mass[1])/(DS.Mass[0] + DS.Mass[1] + DS.Mass[2]))*R*sin(Tilt[1]);

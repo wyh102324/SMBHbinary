@@ -72,7 +72,7 @@ void GetCentroid(const VEC &position1, const  VEC &position2, const double* M, V
     centroidv.z = (position1.z*M[0] + position2.z*M[1])/(M[0] + M[1]);
 }
 
-const double ERR = 1e-9;
+const double ERR = 1e-7;
 bool errCheck_Orbits(const DynamicSystem &DS_try, const DynamicSystem &DS_htry, const int OrbitNumber)
 {
     bool e = 0, te;
@@ -81,10 +81,11 @@ bool errCheck_Orbits(const DynamicSystem &DS_try, const DynamicSystem &DS_htry, 
     VEC centroid_try, centroid_htry;
     if(OrbitNumber == 3)
     {
-        dr = GetDistance(DS_try.position[0], DS_try.position[1]);
-        r1 = GetDistance(DS_htry.position[0], DS_htry.position[1]);
+        dr = GetDistance(DS_try.position[DS_try.ParticleLabel.seq[0]], DS_try.position[DS_try.ParticleLabel.seq[1]]);
+        r1 = GetDistance(DS_htry.position[DS_htry.ParticleLabel.seq[0]], DS_htry.position[DS_htry.ParticleLabel.seq[1]]);
         e =  fabs(dr - r1)/dr > ERR;
-
+        
+        
         dr = GetDistance(DS_try.position[0], DS_try.position[2]);
         r1 = GetDistance(DS_htry.position[0], DS_htry.position[2]);
         te = fabs(dr - r1)/dr > ERR;
@@ -95,7 +96,7 @@ bool errCheck_Orbits(const DynamicSystem &DS_try, const DynamicSystem &DS_htry, 
         dr = GetDistance(DS_try.position[DS_try.ParticleLabel.seq[3]], DS_try.position[DS_try.ParticleLabel.seq[2]]);
         r1 = GetDistance(DS_htry.position[DS_htry.ParticleLabel.seq[3]], DS_htry.position[DS_htry.ParticleLabel.seq[2]]);
         e = fabs(dr - r1)/dr > ERR;
-
+        
         dr = GetDistance(DS_try.position[DS_try.ParticleLabel.seq[0]], DS_try.position[DS_try.ParticleLabel.seq[1]]);
         r1 = GetDistance(DS_htry.position[DS_htry.ParticleLabel.seq[0]], DS_htry.position[DS_htry.ParticleLabel.seq[1]]);
         tmp = fabs(dr - r1)/dr;
